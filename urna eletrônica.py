@@ -1,0 +1,49 @@
+from time import sleep
+n = 0
+cont83 = cont93 = cont45 = cont0 = 0
+
+while True:
+    print('----- URNA ELETRÔNICA -----')
+    print('-'*30)
+    print('        CANDIDATOS          ')
+    print('83 - Pedro')
+    print('93 - Marcos')
+    print('45 - Maria')
+    print('0 - Nulo')
+    print('-'*30)
+
+    n = int(input('Para quem vai seu voto?'))
+    if n == 83:
+        cont83 += 1
+        print('Seu voto foi computado, você votou no Pedro')
+        n-=83
+    elif n == 93:
+        cont93 += 1
+        print('Seu voto foi computado, você votou no Marcos')
+        n -= 93
+    elif n == 45:
+        cont45 += 1
+        print('Seu voto foi computado, você votou na Maria')
+        n -= 45
+    elif n == 0:
+        cont0 += 1
+        print('Seu voto foi computado, você votou Nulo')
+    elif n == 456821:
+        break
+    else:
+        print('\033[0;31mERRO: por favor, digite um voto válido.\033[m')
+    sleep(5)
+    
+print('-='*20)
+print(f'Pedro recebeu {cont83} votos.')
+print(f'Marcos recebeu {cont93} votos.')
+print(f'Maria recebeu {cont45} votos.')
+print(f'Tiveram {cont0} votos nulos.')
+print('=-'*20)
+if cont93 < cont83 > cont45:
+    print('O ganhador das eleições foi Pedro')
+if cont83 < cont93 > cont45:
+    print('O ganhador das eleições foi Marcos')
+if cont93 < cont45 > cont83:
+    print('O ganhador das eleições foi Maria')
+print('-='*20)
