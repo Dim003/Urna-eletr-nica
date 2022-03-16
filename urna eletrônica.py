@@ -11,6 +11,7 @@ while True:
     print('45 - Maria')
     print('0 - Nulo')
     print('-'*30)
+
     n = int(input('Para quem vai seu voto?'))
     if n == 83:
         cont83 += 1
@@ -32,6 +33,7 @@ while True:
     else:
         print('\033[0;31mERRO: por favor, digite um voto válido.\033[m')
     sleep(5)
+    
 print('-='*20)
 print(f'Pedro recebeu {cont83} votos.')
 print(f'Marcos recebeu {cont93} votos.')
